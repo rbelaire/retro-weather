@@ -18,9 +18,8 @@ jobs:
         with:
           gradle-version: '8.7'
       - name: Build debug APK
-        working-directory: retro-kiosk
         run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: retro-weather-apk
-          path: retro-kiosk/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
