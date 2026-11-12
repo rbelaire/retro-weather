@@ -1,5 +1,6 @@
 package com.kiosk.retroweather;
 
+import android.graphics.Bitmap;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -35,7 +36,12 @@ public class MainActivity extends Activity {
         s.setUseWideViewPort(true);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebChromeClient(new WebChromeClient() {
+    @Override
+    public Bitmap getDefaultVideoPoster() {
+        return Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+    }
+});
         webView.setFocusable(true);
         webView.requestFocus();
 
